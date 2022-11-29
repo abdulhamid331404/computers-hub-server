@@ -23,7 +23,6 @@ async function run() {
             const query = {};
             const cursor = computerCollection.find(query);
             const services = await cursor.toArray();
-            console.log(services);
             res.send(services);
         });
 
@@ -31,7 +30,6 @@ async function run() {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const computer = await computerCollection.findOne(query);
-            console.log(computer);
             res.send(computer);
         })
 
